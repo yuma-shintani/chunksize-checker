@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: 'ChunkSize Checker'
+productName: 'Chunk Size Checker'
 directories:
   buildResources: build
 files:

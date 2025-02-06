@@ -1,7 +1,7 @@
 {
   "name": "chunksize-checker",
-  "version": "0.0.1",
-  "description": "ChunkSize Check Tool",
+  "version": "0.0.2",
+  "description": "Chunk Size Check Tool",
   "main": "./out/main/index.js",
   "author": "Yuma Shintani<yuma.shintani@ntt.com>",
   "homepage": "https://www.nttceng.com",
