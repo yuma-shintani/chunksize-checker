@@ -4,12 +4,14 @@ import {
   Box,
   Text,
   Button,
-  Flex,
   SimpleGrid,
   Center,
   Alert,
-  Spinner
+  Spinner,
+  Code,
+  Flex
 } from '@chakra-ui/react'
+import { ClipboardIconButton, ClipboardRoot } from '../../components/ui/clipboard'
 
 function App() {
   const [filePaths, setFilePaths] = useState([])
@@ -88,23 +90,44 @@ function App() {
               ))}
             </Box>
           )}
-
           {result && (
             <Center mt={20}>
               <SimpleGrid columns={[2, null, 3]} gap="40px">
                 <Box display={'grid'} placeItems={'center'}>
-                  <Text textStyle={'2xl'}>Total Tokens</Text>
+                  <Flex gap="10px">
+                    <Text textStyle={'2xl'}>Total Tokens</Text>
+                    <ClipboardRoot value={result.totalTokens}>
+                      <ClipboardIconButton />
+                    </ClipboardRoot>
+                  </Flex>
                   <Text textStyle={'7xl'}>{result.totalTokens}</Text>
                 </Box>
                 <Box display={'grid'} placeItems={'center'}>
-                  <Text textStyle={'2xl'}>Chunk Size</Text>
+                  <Flex gap="10px">
+                    <Text textStyle={'2xl'}>Chunk Size</Text>
+                    <ClipboardRoot value={result.chunkSize}>
+                      <ClipboardIconButton />
+                    </ClipboardRoot>
+                  </Flex>
                   <Text textStyle={'7xl'}>{result.chunkSize}</Text>
                 </Box>
                 <Box display={'grid'} placeItems={'center'}>
-                  <Text textStyle={'2xl'}>Chunk Overlap</Text>
+                  <Flex gap="10px">
+                    <Text textStyle={'2xl'}>Chunk Overlap</Text>
+                    <ClipboardRoot value={result.chunkOverlap}>
+                      <ClipboardIconButton />
+                    </ClipboardRoot>
+                  </Flex>
                   <Text textStyle={'7xl'}>{result.chunkOverlap}</Text>
                 </Box>
               </SimpleGrid>
+            </Center>
+          )}
+          {filePaths.length == 0 && (
+            <Center mt={40} textStyle={'xl'}>
+              <Text>
+                Click <Code>Select Files</Code> to select files.
+              </Text>
             </Center>
           )}
         </Box>
