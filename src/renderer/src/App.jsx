@@ -42,8 +42,8 @@ function App() {
       }
 
       // 合計トークン数からチャンクサイズを算出
-      const chunkSize = Math.min(Math.max(Math.floor(totalTokens * 0.05), 256), 1024)
-      const chunkOverlap = Math.floor(chunkSize * 0.2)
+      const chunkSize = Math.min(Math.max(Math.floor(totalTokens * 0.05), 256), 2048)
+      const chunkOverlap = Math.floor(chunkSize * 0.3)
 
       setResult({ totalTokens, chunkSize, chunkOverlap })
     } catch (error) {

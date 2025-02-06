@@ -20,8 +20,8 @@ async function countTokens(text) {
  */
 async function getOptimalChunkSize(text) {
   const totalTokens = await countTokens(text)
-  let chunkSize = Math.min(Math.max(Math.floor(totalTokens * 0.05), 256), 1024)
-  let chunkOverlap = Math.floor(chunkSize * 0.2)
+  let chunkSize = Math.min(Math.max(Math.floor(totalTokens * 0.05), 256), 2048)
+  let chunkOverlap = Math.floor(chunkSize * 0.3)
 
   return { totalTokens, chunkSize, chunkOverlap }
 }
