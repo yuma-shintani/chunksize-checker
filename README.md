@@ -1,4 +1,6 @@
-# ChunkSize Checker
+# Chunk Size Checker
+
+<img src="./build/icon.png" width="128" />
 
 Calculate the number of total tokens, optimal chunk size and chunk overlap from any given document.
 
@@ -32,7 +34,7 @@ npm run dev
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
