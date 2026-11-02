@@ -32,6 +32,17 @@ npm run install
 npm run dev
 ```
 
+## Releases
+
+Push a tag such as `v0.0.5` to build and publish Windows and macOS packages.
+The workflow sets the package version from the tag and uploads the packages to
+the matching GitHub release.
+
+To rebuild an existing release, open **Actions → ChunkSize Checker CI → Run workflow**,
+select the `main` branch, and enter the existing tag (for example, `v0.0.5`).
+This builds the tagged source with the current release workflow; recreating the tag
+is not necessary.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
