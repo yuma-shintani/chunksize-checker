@@ -1,0 +1,48 @@
+{
+  automerge: false,
+  dependencyDashboard: false,
+  labels: ["dependencies"],
+  minimumReleaseAge: "7 days",
+  minimumReleaseAgeBehaviour: "timestamp-optional",
+  groupName: "all dependencies",
+  packageRules: [
+    {
+      // ts-jest supports TypeScript >=4.3 <7; revisit when it supports 7.
+      matchManagers: ["npm"],
+      matchPackageNames: ["typescript"],
+      allowedVersions: "<7",
+    },
+    {
+      // eslint-config-next's eslint-plugin-import does not support ESLint 10.
+      matchManagers: ["npm"],
+      matchPackageNames: ["eslint"],
+      allowedVersions: "<10",
+    },
+    {
+      matchManagers: ["github-actions"],
+      groupName: "github-actions",
+      pinDigests: true,
+    },
+    {
+      matchUpdateTypes: ["patch", "minor"],
+      automerge: true,
+      automergeType: "pr",
+    },
+    {
+      matchUpdateTypes: ["major"],
+      automerge: false,
+      prBodyNotes: [
+        ":warning: **メジャーバージョンの更新が含まれます。CHANGELOG を確認してください。**",
+      ],
+    },
+  ],
+  prBodyTemplate: "{{{header}}}{{{notes}}}{{{table}}}{{{changelogs}}}",
+  prConcurrentLimit: 0,
+  prHourlyLimit: 0,
+  rangeStrategy: "bump",
+  rebaseWhen: "conflicted",
+  semanticCommits: "enabled",
+  separateMajorMinor: false,
+  timezone: "Asia/Tokyo",
+  reviewers: ["yuma-shintani"],
+}
