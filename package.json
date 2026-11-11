@@ -18,7 +18,7 @@
     "build:linux": "npm run build && electron-builder --linux"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.37.0",
+    "@chakra-ui/react": "^3.38.0",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@emotion/react": "^11.14.0",
@@ -35,7 +35,7 @@
     "@electron-toolkit/eslint-config": "^3.0.0",
     "@electron-toolkit/eslint-config-prettier": "^3.0.1",
     "@vitejs/plugin-react": "^6.2.1",
-    "electron": "^45.2.1",
+    "electron": "^45.2.2",
     "electron-builder": "^26.18.0",
     "electron-vite": "^6.0.0",
     "eslint": "^9.39.5",
